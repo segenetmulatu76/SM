@@ -1,8 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3") center/cover no-repeat fixed;
-    color: white;
+    background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3") center/cover no-repeat;
 }
 
 header {
