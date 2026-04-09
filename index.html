@@ -3,59 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segenet Mulatu — Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Segenet Mulatu - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0f10;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #60a5fa;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #a3bffa;
+            margin-top: 10px;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        .project {
+            background: #111;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #60a5fa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #aaa;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #60a5fa;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Stars Background -->
-<canvas id="stars"></canvas>
-
-<div class="hero">
+<header>
     <h1>Segenet Mulatu</h1>
     <p class="subtitle">Web Developer • App Developer</p>
-</div>
+</header>
 
-<section class="section">
+<div class="section">
     <h2>About Me</h2>
     <p>
-        I am <strong>Segenet Mulatu</strong>, a passionate web and app developer who loves 
-        creating modern, clean, and useful applications. I enjoy learning new 
-        technologies and building meaningful digital solutions.
+        I am Segenet Mulatu, a passionate web and app developer who loves creating modern,
+        clean, and useful applications. I enjoy learning new technologies and building
+        meaningful digital solutions.
     </p>
-</section>
+</div>
 
-<section class="section">
+<div class="section">
     <h2>My Projects</h2>
 
-    <div class="project-card">
+    <div class="project">
         <h3>✔ Portfolio Website</h3>
         <p>A modern personal portfolio website built using HTML, CSS, and JavaScript.</p>
     </div>
 
-    <div class="project-card">
+    <div class="project">
         <h3>✔ Smart To-Do App</h3>
-        <p>A mobile-friendly task manager app to help users organize their activities.</p>
+        <p>A mobile-friendly task manager app to help users organize their daily activities.</p>
     </div>
 
-    <div class="project-card">
+    <div class="project">
         <h3>✔ Weather Forecast App</h3>
         <p>An app that shows real-time weather data using a weather API.</p>
     </div>
-</section>
 
-<section class="section">
+</div>
+
+<div class="section">
     <h2>Contact</h2>
-    <p>Email me at:</p>
-    <a class="email" href="mailto:segenetmulatu76@gmail.com">
-        segenetmulatu76@gmail.com
-    </a>
-</section>
+    <p>Email me at: <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a></p>
+</div>
 
 <footer>
     © 2026 Segenet Mulatu — All Rights Reserved.
 </footer>
 
-<script src="stars.js"></script>
 </body>
 </html>
