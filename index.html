@@ -1,112 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segenet Mulatu - Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d0f10;
-            color: white;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Segenet Mulatu · smart portfolio</title>
+  <!-- modern smooth fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for clean icons (smart modern detail) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0b0e11;
+      color: #edf2f7;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        h1 {
-            font-size: 40px;
-            margin: 0;
-        }
+    /* smooth gradient / animated background effect */
+    .bg-glow {
+      position: fixed;
+      top: -20vh;
+      left: -10vw;
+      width: 120vw;
+      height: 120vh;
+      background: radial-gradient(circle at 30% 40%, rgba(56, 130, 246, 0.12), transparent 55%),
+                  radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        h2 {
-            color: #60a5fa;
-        }
+    /* main container stays above glow */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .subtitle {
-            font-size: 18px;
-            color: #a3bffa;
-            margin-top: 10px;
-        }
+    /* header — modern glassmorphism touch */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 70px;
+      margin-bottom: 20px;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 0 0 48px 48px;
+      border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.6);
+    }
 
-        .section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
-        }
+    h1 {
+      font-size: clamp(3rem, 12vw, 5.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff, #bdd3ff, #a0c4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
 
-        .project {
-            background: #111;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #60a5fa;
-        }
+    .badge {
+      display: inline-block;
+      background: rgba(96, 165, 250, 0.15);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 8px 24px;
+      border-radius: 60px;
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #bdd3ff;
+      letter-spacing: 0.3px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: #aaa;
-            margin-top: 40px;
-        }
+    .hero-tagline {
+      margin-top: 24px;
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
 
-        a {
-            color: #60a5fa;
-        }
-    </style>
+    .hero-tagline i {
+      color: #60a5fa;
+      margin-right: 6px;
+    }
+
+    /* section cards – glass + elevated */
+    .section-card {
+      background: rgba(18, 25, 35, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(75, 130, 210, 0.2);
+      border-radius: 36px;
+      padding: 40px 36px;
+      margin: 48px 0;
+      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 35px 55px -20px #000000cc, 0 0 0 1px rgba(96, 165, 250, 0.25);
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #f0f6ff;
+      border-bottom: 2px solid rgba(96, 165, 250, 0.3);
+      padding-bottom: 16px;
+    }
+
+    h2 i {
+      color: #60a5fa;
+      font-size: 2rem;
+    }
+
+    .about-text {
+      font-size: 1.25rem;
+      color: #d1dbe9;
+      max-width: 780px;
+    }
+
+    /* Project grid — smart & modern */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .project-item {
+      background: #0f1822;
+      border-radius: 28px;
+      padding: 30px 24px 24px;
+      border: 1px solid #2a3a4e;
+      transition: all 0.25s;
+      box-shadow: 0 15px 25px -12px #00000080;
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item:hover {
+      border-color: #60a5fa;
+      background: #111d2b;
+      box-shadow: 0 20px 30px -10px #000, 0 0 0 1px #60a5fa30;
+      transform: scale(1.01);
+    }
+
+    .project-icon {
+      font-size: 2.8rem;
+      color: #60a5fa;
+      margin-bottom: 22px;
+    }
+
+    .project-item h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: white;
+      letter-spacing: -0.01em;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: #1e3a5f40;
+      border-radius: 40px;
+      padding: 4px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #aac8ff;
+      margin-top: 16px;
+      border: 1px solid #3b5e8b;
+      align-self: flex-start;
+    }
+
+    .project-item p {
+      color: #b7c9e2;
+      font-size: 1.05rem;
+      margin: 10px 0 8px;
+      flex: 1;
+    }
+
+    /* contact section — stylish */
+    .contact-flex {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px 50px;
+    }
+
+    .contact-email {
+      display: flex;
+      align-items: center;
+      background: #0f1a24;
+      padding: 16px 28px;
+      border-radius: 60px;
+      border: 1px solid #2e4a6a;
+      transition: 0.2s;
+    }
+
+    .contact-email i {
+      font-size: 1.8rem;
+      margin-right: 18px;
+      color: #60a5fa;
+    }
+
+    .contact-email a {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #e2ecff;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .contact-email a:hover {
+      border-bottom: 2px solid #60a5fa;
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .social-links a {
+      color: #a0bbdf;
+      font-size: 2rem;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #60a5fa;
+      transform: translateY(-4px);
+    }
+
+    /* footer — minimal with glow */
+    footer {
+      margin-top: 70px;
+      padding: 36px 0 30px;
+      text-align: center;
+      border-top: 1px solid #1f3347;
+      color: #95aac9;
+      font-size: 1rem;
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    footer i {
+      color: #e06c75;
+      margin: 0 4px;
+    }
+
+    /* responsiveness */
+    @media (max-width: 600px) {
+      .section-card {
+        padding: 30px 22px;
+        border-radius: 28px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 50px 16px 45px;
+      }
+      .contact-email {
+        padding: 12px 20px;
+      }
+      .contact-email a {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* smooth appearance */
+    .fade-up {
+      opacity: 0;
+      animation: fadeInUp 0.6s cubic-bezier(0.15, 0.85, 0.3, 1.05) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+<div class="bg-glow"></div>
 
-<header>
+<div class="wrapper">
+  <!-- HERO – modern & bold -->
+  <header class="hero fade-up">
     <h1>Segenet Mulatu</h1>
-    <p class="subtitle">Web Developer • App Developer</p>
-</header>
+    <div class="badge">
+      <i class="fas fa-code" style="margin-right: 8px;"></i> full‑stack creator
+    </div>
+    <div class="hero-tagline">
+      <span><i class="fas fa-globe"></i> Web Developer</span>
+      <span><i class="fas fa-mobile-alt"></i> App Developer</span>
+      <span><i class="fas fa-bolt"></i> smart & modern</span>
+    </div>
+    <!-- subtle decorative line -->
+    <div style="margin-top: 30px; width: 90px; height: 3px; background: linear-gradient(90deg, #60a5fa, #a78bfa, transparent); margin-left: auto; margin-right: auto; border-radius: 10px;"></div>
+  </header>
 
-<div class="section">
-    <h2>About Me</h2>
+  <!-- ABOUT section (attractive card) -->
+  <section class="section-card fade-up delay-1">
+    <h2>
+      <i class="fas fa-user-astronaut"></i> 
+      About Me
+    </h2>
+    <div class="about-text">
+      <p style="margin-bottom: 16px;">👋 I'm <strong>Segenet Mulatu</strong> — a developer with an eye for clean design and smart functionality. I turn ideas into sleek, responsive web & mobile experiences.</p>
+      <p>⚡ I thrive on modern stacks, from fluid UIs to backend logic. Every project is an opportunity to blend creativity with robust code. Let's build something exceptional.</p>
+    </div>
+    <!-- skill chips (modern micro interaction) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
+      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-react" style="margin-right: 6px;"></i>React</span>
+      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-vuejs"></i> Vue</span>
+      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-node"></i> Node.js</span>
+      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fas fa-database"></i> Firebase</span>
+      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-swift"></i> SwiftUI</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS – smart grid, attractive cards -->
+  <section class="section-card fade-up delay-2">
+    <h2>
+      <i class="fas fa-rocket"></i> 
+      Featured projects
+    </h2>
+    <div class="project-grid">
+      
+      <!-- project 1: portfolio -->
+      <div class="project-item">
+        <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Portfolio 2026</h3>
+        <p>Modern, responsive portfolio with glassmorphism & smart animations. Built with HTML/CSS and a touch of magic.</p>
+        <span class="project-tag"><i class="far fa-star"></i> live demo</span>
+      </div>
+
+      <!-- project 2: Smart To-Do -->
+      <div class="project-item">
+        <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Smart To‑Do</h3>
+        <p>Task manager with drag‑n‑drop, reminders & offline sync. Mobile‑first design, PWA ready.</p>
+        <span class="project-tag"><i class="fas fa-mobile-alt"></i> app · web</span>
+      </div>
+
+      <!-- project 3: Weather App -->
+      <div class="project-item">
+        <div class="project-icon"><i class="fas fa-cloud-sun-rain"></i></div>
+        <h3>Atmos Weather</h3>
+        <p>Real‑time weather, animated icons & 7‑day forecast. Powered by OpenWeather API, sleek glass UI.</p>
+        <span class="project-tag"><i class="fas fa-map-pin"></i> live API</span>
+      </div>
+
+      <!-- extra project: showcase more smartness -->
+      <div class="project-item">
+        <div class="project-icon"><i class="fas fa-cart-shopping"></i></div>
+        <h3>SwiftCart</h3>
+        <p>Minimal e‑commerce UI prototype with smooth cart & product filtering. React + Framer Motion.</p>
+        <span class="project-tag"><i class="fab fa-react"></i> in progress</span>
+      </div>
+    </div>
+    <!-- subtle extra: "and more" hint -->
+    <p style="margin-top: 28px; font-style: italic; color: #90a9c7;"><i class="fas fa-arrow-right" style="margin-right: 6px;"></i> constantly crafting new experiments ...</p>
+  </section>
+
+  <!-- CONTACT — modern, interactive -->
+  <section class="section-card fade-up delay-3">
+    <h2>
+      <i class="fas fa-paper-plane"></i> 
+      Let's connect
+    </h2>
+    <div class="contact-flex">
+      <div class="contact-email">
+        <i class="fas fa-envelope-open-text"></i>
+        <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+      </div>
+    </div>
+    <!-- tiny extra: call to action -->
+    <div style="margin-top: 36px; background: #0a131f; border-radius: 40px; padding: 18px 28px; border: 1px dashed #3b6390;">
+      <p style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; color: #bfd6f5;">
+        <i class="fas fa-calendar-check" style="font-size: 1.8rem;"></i> 
+        <span style="font-size: 1.2rem;">Open for freelance & collaborations — let’s build the future.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER with modern twist -->
+  <footer>
     <p>
-        I am Segenet Mulatu, a passionate web and app developer who loves creating modern,
-        clean, and useful applications. I enjoy learning new technologies and building
-        meaningful digital solutions.
+      <i class="fas fa-crown" style="color: #fbbf24;"></i>  
+      © 2026 Segenet Mulatu — designed with <i class="fas fa-heart" style="color: #f472b6;"></i> and code
+      <i class="fas fa-crown" style="color: #fbbf24; margin-left: 4px;"></i>
     </p>
+    <p style="margin-top: 14px; font-size: 0.9rem; opacity: 0.75;">
+      <i class="fas fa-microchip"></i> smart · modern · attractive
+    </p>
+  </footer>
 </div>
 
-<div class="section">
-    <h2>My Projects</h2>
-
-    <div class="project">
-        <h3>✔ Portfolio Website</h3>
-        <p>A modern personal portfolio website built using HTML, CSS, and JavaScript.</p>
-    </div>
-
-    <div class="project">
-        <h3>✔ Smart To-Do App</h3>
-        <p>A mobile-friendly task manager app to help users organize their daily activities.</p>
-    </div>
-
-    <div class="project">
-        <h3>✔ Weather Forecast App</h3>
-        <p>An app that shows real-time weather data using a weather API.</p>
-    </div>
-
-</div>
-
-<div class="section">
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a></p>
-</div>
-
-<footer>
-    © 2026 Segenet Mulatu — All Rights Reserved.
-</footer>
-
+<!-- tiny script for extra polish (no heavy deps) -->
+<script>
+  (function() {
+    // makes any future interactive touches smooth – just a tiny hover effect on cards already in css.
+    // Also add a subtle console signature (smart)
+    console.log("✨ Segenet Mulatu · portfolio — smart, modern, attractive ✨");
+  })();
+</script>
 </body>
 </html>
