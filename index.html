@@ -1,61 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Segenet Mulatu </title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segenet Mulatu - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0b0e11;
+            color: #edf2f7;
+        }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0b0e11;
-      color: #edf2f7;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .bg-glow {
-      position: fixed;
-      top: -20vh;
-      left: -10vw;
-      width: 120vw;
-      height: 120vh;
-      background: radial-gradient(circle at 30% 40%, rgba(56, 130, 246, 0.12), transparent 55%),
-                  radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08), transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
 
-    .wrapper {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 24px 70px;
-      margin-bottom: 20px;
-      background: rgba(15, 23, 42, 0.5);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 0 0 48px 48px;
-      border-bottom: 1px solid rgba(96, 165, 250, 0.2);
-      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.6);
-    }
-
-    h1 {
-      font-size: clamp(3rem, 12vw, 5.2rem);
+        h1 {
+                font-size: clamp(3rem, 12vw, 5.2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       background: linear-gradient(135deg, #ffffff, #bdd3ff, #a0c4ff);
@@ -64,59 +28,10 @@
       color: transparent;
       margin-bottom: 8px;
       line-height: 1.1;
-    }
+        }
 
-    .badge {
-      display: inline-block;
-      background: rgba(96, 165, 250, 0.15);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      padding: 8px 24px;
-      border-radius: 60px;
-      border: 1px solid rgba(96, 165, 250, 0.35);
-      margin-top: 16px;
-      font-weight: 500;
-      font-size: 1.2rem;
-      color: #bdd3ff;
-      letter-spacing: 0.3px;
-    }
-
-    .hero-tagline {
-      margin-top: 24px;
-      font-size: 1.3rem;
-      color: #cbd5e1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    .hero-tagline i {
-      color: #60a5fa;
-      margin-right: 6px;
-    }
-
-  
-    .section-card {
-      background: rgba(28, 25, 35, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(75, 130, 210, 0.2);
-      border-radius: 36px;
-      padding: 40px 36px;
-      margin: 48px 0;
-      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-      transition: transform 0.25s ease, box-shadow 0.3s ease;
-    }
-
-    .section-card:hover {
-      box-shadow: 0 35px 55px -20px #000000cc, 0 0 0 1px rgba(96, 165, 250, 0.25);
-      transform: translateY(-3px);
-    }
-
-    h2 {
-      font-size: 2.4rem;
+        h2 {
+           font-size: 2.4rem;
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 28px;
@@ -126,334 +41,83 @@
       color: #f0f6ff;
       border-bottom: 2px solid rgba(96, 165, 250, 0.3);
       padding-bottom: 16px;
-    }
-
-    h2 i {
-      color: #60a5fa;
-      font-size: 2rem;
-    }
-
-    .about-text {
-      font-size: 1.25rem;
-      color: #d1dbe9;
-      max-width: 780px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-      margin-top: 20px;
-    }
-
-    .project-item {
-      background: #0f1822;
-      border-radius: 28px;
-      padding: 30px 24px 24px;
-      border: 1px solid #2a3a4e;
-      transition: all 0.25s;
-      box-shadow: 0 15px 25px -12px #00000080;
-      backdrop-filter: blur(4px);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-item:hover {
-      border-color: #60a5fa;
-      background: #111d2b;
-      box-shadow: 0 20px 30px -10px #000, 0 0 0 1px #60a5fa30;
-      transform: scale(1.01);
-    }
-
-    .project-icon {
-      font-size: 2.8rem;
-      color: #60a5fa;
-      margin-bottom: 22px;
-    }
-
-    .project-item h3 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: white;
-      letter-spacing: -0.01em;
-    }
-
-    .project-tag {
-      display: inline-block;
-      background: #1e3a5f40;
-      border-radius: 40px;
-      padding: 4px 14px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #aac8ff;
-      margin-top: 16px;
-      border: 1px solid #3b5e8b;
-      align-self: flex-start;
-    }
-
-    .project-item p {
-      color: #b7c9e2;
-      font-size: 1.05rem;
-      margin: 10px 0 8px;
-      flex: 1;
-    }
-
-    .contact-flex {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 28px 50px;
-    }
-
-    .contact-email {
-      display: flex;
-      align-items: center;
-      background: #0f1a24;
-      padding: 16px 28px;
-      border-radius: 60px;
-      border: 1px solid #2e4a6a;
-      transition: 0.2s;
-    }
-
-    .contact-email i {
-      font-size: 1.8rem;
-      margin-right: 18px;
-      color: #60a5fa;
-    }
-
-    .contact-email a {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #e2ecff;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border 0.2s;
-    }
-
-    .contact-email a:hover {
-      border-bottom: 2px solid #60a5fa;
-      color: white;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .social-links a {
-      color: #a0bbdf;
-      font-size: 2rem;
-      transition: all 0.2s;
-    }
-
-    .social-links a:hover {
-      color: #60a5fa;
-      transform: translateY(-4px);
-    }
-
-    
-    footer {
-      margin-top: 70px;
-      padding: 36px 0 30px;
-      text-align: center;
-      border-top: 1px solid #1f3347;
-      color: #95aac9;
-      font-size: 1rem;
-      backdrop-filter: blur(8px);
-      position: relative;
-    }
-
-    footer i {
-      color: #e06c75;
-      margin: 0 4px;
-    }
-
-      @media (max-width: 600px) {
-      .section-card {
-        padding: 30px 22px;
-        border-radius: 28px;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      .hero {
-        padding: 50px 16px 45px;
-      }
-      .contact-email {
-        padding: 12px 20px;
-      }
-      .contact-email a {
-        font-size: 1.1rem;
-      }
-    }
-
-    .fade-up {
-      opacity: 0;
-      animation: fadeInUp 0.6s cubic-bezier(0.15, 0.85, 0.3, 1.05) forwards;
-    }
-
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(18px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-<div class="bg-glow"></div>
-
-<div class="wrapper">
-  <!-- HERO – modern & bold -->
-  <header class="hero fade-up">
-    <h1>Segenet Mulatu</h1>
-    <div class="badge">
-      <i class="fas fa-code" style="margin-right: 8px;"></i> full‑stack creator
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segenet Mulatu - Portfolio</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #0d0f10;
-            color: white;
-            line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            margin: 0;
+        .subtitle {
+            font-size: 18px;
+            color: #a3bffa;
+            margin-top: 10px;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        .project {
+            background: #111;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #60a5fa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #aaa;
+            margin-top: 40px;
         }
 
         a {
             color: #60a5fa;
-            text-decoration: none;
-        }
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1.2s forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            background-size: 200% 200%;
-            animation: gradientMove 8s ease infinite;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #93c5fd;
-            margin-top: 10px;
-        }
-        .section {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 30px;
-            background: #1a1a1a;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-3px);
-        }
-
-        h2 {
-            color: #60a5fa;
-            margin-bottom: 15px;
-            font-size: 30px;
-        }
-        .project {
-            background: #111;
-            padding: 18px;
-            border-radius: 10px;
-            margin-bottom: 18px;
-            border-left: 4px solid #60a5fa;
-            transition: 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateX(6px);
-            background: #151515;
-        }
-
-        .project h3 {
-            margin-bottom: 8px;
-            font-size: 22px;
-            color: #93c5fd;
-        }
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #111;
-            color: #888;
-            margin-top: 40px;
-            border-top: 2px solid #1f1f1f;
         }
     </style>
 </head>
-
 <body>
 
-<header class="fade-in">
+<header>
     <h1>Segenet Mulatu</h1>
     <p class="subtitle">Web Developer • App Developer</p>
 </header>
-<div class="section fade-in">
+
+<div class="section">
     <h2>About Me</h2>
-    <p>
-        I am <strong>Segenet Mulatu</strong>, a passionate web and app developer who enjoys creating
-        clean, modern, and useful digital experiences. I love exploring new technologies
-        and building meaningful applications for real-world use.
+    <p style="margin-bottom: 16px;">
+        I am Segenet Mulatu, a passionate web and app developer who loves creating modern,
+        clean, and useful applications. I enjoy learning new technologies and building
+        meaningful digital solutions.
     </p>
 </div>
-<div class="section fade-in">
+
+<div class="section">
     <h2>My Projects</h2>
 
     <div class="project">
         <h3>✔ Portfolio Website</h3>
-        <p>A modern personal portfolio built using HTML, CSS, and JavaScript.</p>
+        <p>A modern personal portfolio website built using HTML, CSS, and JavaScript.</p>
     </div>
 
     <div class="project">
         <h3>✔ Smart To-Do App</h3>
-        <p>A mobile-friendly task manager to help users organize their daily tasks efficiently.</p>
+        <p>A mobile-friendly task manager app to help users organize their daily activities.</p>
     </div>
 
     <div class="project">
         <h3>✔ Weather Forecast App</h3>
-        <p>An app that shows real-time weather data using live weather APIs.</p>
+        <p>An app that shows real-time weather data using a weather API.</p>
     </div>
+
 </div>
-<div class="section fade-in">
+
+<div class="section">
     <h2>Contact</h2>
-    <p>Email me at:
-        <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a>
-    </p>
+    <p>Email me at: <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a></p>
 </div>
 
 <footer>
