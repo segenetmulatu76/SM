@@ -28,7 +28,6 @@ body {
     font-size: 4rem;
     color: var(--gold);
     margin: 0;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 .hero p {
