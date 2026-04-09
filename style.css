@@ -1,116 +1,45 @@
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Page Styling */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f2f2f2;
-    color: #444;
-    line-height: 1.6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3") center/cover no-repeat fixed;
+    color: white;
 }
 
-/* Layout Container */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
 header {
-    background: linear-gradient(120deg, #121212 70%, #009688 110%);
-    color: #fff;
     text-align: center;
-    padding: 60px 0 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    padding: 80px 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
 }
 
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+h1 {
+    font-size: 40px;
+    font-weight: bold;
 }
 
-header p {
-    font-size: 1.25em;
-    color: #b2dfdb;
-    font-style: italic;
+section {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
-/* Sections */
-main section {
-    background: #fff;
-    padding: 40px 0;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.25s;
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
 }
 
-main section:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
-}
-
-h2 {
-    color: #009688;
-    margin-bottom: 18px;
-}
-
-/* Project List */
-.project-list {
-    list-style: none;
-}
-
-.project-list li {
-    font-size: 1.15em;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-}
-
-.project-list li:last-child {
-    border-bottom: none;
-}
-
-.checkmark {
-    color: #43a047;
-    font-size: 1.3em;
-    margin-right: 10px;
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    border-radius: 0 0 12px 12px;
-}
-
-footer a {
-    color: #80cbc4;
+.card a {
+    color: #4da3ff;
     text-decoration: none;
-    border-bottom: 1px dotted #80cbc4;
-    transition: 0.2s;
+    font-weight: bold;
 }
 
-footer a:hover {
-    color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    main section {
-        padding: 20px 0;
-    }
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
 }
