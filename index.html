@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Segenet Mulatu · smart portfolio</title>
-  <!-- modern smooth fonts -->
+  <title>Segenet Mulatu </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-  <!-- Font Awesome for clean icons (smart modern detail) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -24,8 +22,6 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* smooth gradient / animated background effect */
     .bg-glow {
       position: fixed;
       top: -20vh;
@@ -38,7 +34,6 @@
       z-index: 0;
     }
 
-    /* main container stays above glow */
     .wrapper {
       position: relative;
       z-index: 2;
@@ -47,7 +42,6 @@
       padding: 0 24px;
     }
 
-    /* header — modern glassmorphism touch */
     .hero {
       text-align: center;
       padding: 80px 24px 70px;
@@ -103,9 +97,9 @@
       margin-right: 6px;
     }
 
-    /* section cards – glass + elevated */
+  
     .section-card {
-      background: rgba(18, 25, 35, 0.75);
+      background: rgba(28, 25, 35, 0.75);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(75, 130, 210, 0.2);
@@ -145,7 +139,6 @@
       max-width: 780px;
     }
 
-    /* Project grid — smart & modern */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -206,7 +199,6 @@
       flex: 1;
     }
 
-    /* contact section — stylish */
     .contact-flex {
       display: flex;
       align-items: center;
@@ -260,7 +252,7 @@
       transform: translateY(-4px);
     }
 
-    /* footer — minimal with glow */
+    
     footer {
       margin-top: 70px;
       padding: 36px 0 30px;
@@ -277,8 +269,7 @@
       margin: 0 4px;
     }
 
-    /* responsiveness */
-    @media (max-width: 600px) {
+      @media (max-width: 600px) {
       .section-card {
         padding: 30px 22px;
         border-radius: 28px;
@@ -297,7 +288,6 @@
       }
     }
 
-    /* smooth appearance */
     .fade-up {
       opacity: 0;
       animation: fadeInUp 0.6s cubic-bezier(0.15, 0.85, 0.3, 1.05) forwards;
@@ -340,19 +330,9 @@
     </h2>
     <div class="about-text">
       <p style="margin-bottom: 16px;">👋 I'm <strong>Segenet Mulatu</strong> — a developer with an eye for clean design and smart functionality. I turn ideas into sleek, responsive web & mobile experiences.</p>
-      <p>⚡ I thrive on modern stacks, from fluid UIs to backend logic. Every project is an opportunity to blend creativity with robust code. Let's build something exceptional.</p>
-    </div>
-    <!-- skill chips (modern micro interaction) -->
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
-      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-react" style="margin-right: 6px;"></i>React</span>
-      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-vuejs"></i> Vue</span>
-      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-node"></i> Node.js</span>
-      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fas fa-database"></i> Firebase</span>
-      <span style="background: #1e2f44; padding: 8px 20px; border-radius: 40px; font-size: 0.95rem; border: 1px solid #3d6182;"><i class="fab fa-swift"></i> SwiftUI</span>
     </div>
   </section>
-
-  <!-- PROJECTS – smart grid, attractive cards -->
+  
   <section class="section-card fade-up delay-2">
     <h2>
       <i class="fas fa-rocket"></i> 
@@ -360,7 +340,7 @@
     </h2>
     <div class="project-grid">
       
-      <!-- project 1: portfolio -->
+
       <div class="project-item">
         <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
         <h3>Portfolio 2026</h3>
@@ -368,7 +348,7 @@
         <span class="project-tag"><i class="far fa-star"></i> live demo</span>
       </div>
 
-      <!-- project 2: Smart To-Do -->
+      
       <div class="project-item">
         <div class="project-icon"><i class="fas fa-check-circle"></i></div>
         <h3>Smart To‑Do</h3>
@@ -376,23 +356,7 @@
         <span class="project-tag"><i class="fas fa-mobile-alt"></i> app · web</span>
       </div>
 
-      <!-- project 3: Weather App -->
-      <div class="project-item">
-        <div class="project-icon"><i class="fas fa-cloud-sun-rain"></i></div>
-        <h3>Atmos Weather</h3>
-        <p>Real‑time weather, animated icons & 7‑day forecast. Powered by OpenWeather API, sleek glass UI.</p>
-        <span class="project-tag"><i class="fas fa-map-pin"></i> live API</span>
-      </div>
 
-      <!-- extra project: showcase more smartness -->
-      <div class="project-item">
-        <div class="project-icon"><i class="fas fa-cart-shopping"></i></div>
-        <h3>SwiftCart</h3>
-        <p>Minimal e‑commerce UI prototype with smooth cart & product filtering. React + Framer Motion.</p>
-        <span class="project-tag"><i class="fab fa-react"></i> in progress</span>
-      </div>
-    </div>
-    <!-- subtle extra: "and more" hint -->
     <p style="margin-top: 28px; font-style: italic; color: #90a9c7;"><i class="fas fa-arrow-right" style="margin-right: 6px;"></i> constantly crafting new experiments ...</p>
   </section>
 
@@ -410,37 +374,26 @@
       <div class="social-links">
         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
       </div>
     </div>
-    <!-- tiny extra: call to action -->
     <div style="margin-top: 36px; background: #0a131f; border-radius: 40px; padding: 18px 28px; border: 1px dashed #3b6390;">
       <p style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; color: #bfd6f5;">
         <i class="fas fa-calendar-check" style="font-size: 1.8rem;"></i> 
-        <span style="font-size: 1.2rem;">Open for freelance & collaborations — let’s build the future.</span>
-      </p>
+         
     </div>
   </section>
-
-  <!-- FOOTER with modern twist -->
   <footer>
     <p>
       <i class="fas fa-crown" style="color: #fbbf24;"></i>  
       © 2026 Segenet Mulatu — designed with <i class="fas fa-heart" style="color: #f472b6;"></i> and code
       <i class="fas fa-crown" style="color: #fbbf24; margin-left: 4px;"></i>
     </p>
-    <p style="margin-top: 14px; font-size: 0.9rem; opacity: 0.75;">
-      <i class="fas fa-microchip"></i> smart · modern · attractive
-    </p>
+  
   </footer>
 </div>
 
-<!-- tiny script for extra polish (no heavy deps) -->
 <script>
   (function() {
-    // makes any future interactive touches smooth – just a tiny hover effect on cards already in css.
-    // Also add a subtle console signature (smart)
     console.log("✨ Segenet Mulatu · portfolio — smart, modern, attractive ✨");
   })();
 </script>
