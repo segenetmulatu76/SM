@@ -3,110 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segenet Mulatu - Portfolio</title>
+    <title>Segenet Mulatu • Portfolio</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #0d0f10;
-            color: white;
+            background: #0a0f1a;
+            color: #e6e6e6;
         }
 
-        header {
+        /* ⭐ STAR BACKGROUND */
+        .stars {
+            width: 100%;
+            height: 250px;
+            background: url('https://i.imgur.com/9aK9bbi.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            animation: glow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        .header-text {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding-top: 60px;
         }
 
-        h1 {
+        .header-text h1 {
             font-size: 40px;
             margin: 0;
         }
 
-        h2 {
-            color: #60a5fa;
-        }
-
-        .subtitle {
+        .header-text p {
             font-size: 18px;
-            color: #a3bffa;
-            margin-top: 10px;
+            opacity: 0.8;
         }
 
+        /* SECTIONS */
         .section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.05);
+            margin: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.4);
         }
 
+        .section h2 {
+            color: #8cb4ff;
+        }
+
+        /* PROJECT CARDS */
         .project {
-            background: #111;
+            border-left: 3px solid #4c6fff;
             padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #60a5fa;
+            margin: 18px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .email a {
+            color: #6ca0ff;
+            font-size: 18px;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #111;
-            color: #aaa;
-            margin-top: 40px;
-        }
-
-        a {
-            color: #60a5fa;
+            opacity: 0.6;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Segenet Mulatu</h1>
-    <p class="subtitle">Web Developer • App Developer</p>
-</header>
-
-<div class="section">
-    <h2>About Me</h2>
-    <p>
-        I am Segenet Mulatu, a passionate web and app developer who loves creating modern,
-        clean, and useful applications. I enjoy learning new technologies and building
-        meaningful digital solutions.
-    </p>
-</div>
-
-<div class="section">
-    <h2>My Projects</h2>
-
-    <div class="project">
-        <h3>✔ Portfolio Website</h3>
-        <p>A modern personal portfolio website built using HTML, CSS, and JavaScript.</p>
+    <!-- ⭐ STAR HEADER -->
+    <div class="stars">
+        <div class="header-text">
+            <h1>Segenet Mulatu</h1>
+            <p>Web Developer • App Developer</p>
+        </div>
     </div>
 
-    <div class="project">
-        <h3>✔ Smart To-Do App</h3>
-        <p>A mobile-friendly task manager app to help users organize their daily activities.</p>
+    <!-- ABOUT ME -->
+    <div class="section">
+        <h2>About Me</h2>
+        <p>
+            I am <strong>Segenet Mulatu</strong>, a passionate web and app developer who loves creating
+            modern, clean, and useful applications. I enjoy learning new technologies and building
+            meaningful digital solutions.
+        </p>
     </div>
 
-    <div class="project">
-        <h3>✔ Weather Forecast App</h3>
-        <p>An app that shows real-time weather data using a weather API.</p>
+    <!-- PROJECTS -->
+    <div class="section">
+        <h2>My Projects</h2>
+
+        <div class="project">
+            <h3>✔ Portfolio Website</h3>
+            <p>A modern personal website built using HTML, CSS, and JavaScript.</p>
+        </div>
+
+        <div class="project">
+            <h3>✔ Smart To-Do App</h3>
+            <p>A mobile-friendly task manager app to help users organize daily activities.</p>
+        </div>
+
+        <div class="project">
+            <h3>✔ Weather Forecast App</h3>
+            <p>An app that shows real-time weather data using a weather API.</p>
+        </div>
     </div>
 
-</div>
+    <!-- CONTACT -->
+    <div class="section">
+        <h2>Contact</h2>
+        <div class="email">
+            <p>Email me at:</p>
+            <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a>
+        </div>
+    </div>
 
-<div class="section">
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:segenetmulatu76@gmail.com">segenetmulatu76@gmail.com</a></p>
-</div>
-
-<footer>
-    © 2026 Segenet Mulatu — All Rights Reserved.
-</footer>
+    <footer>
+        © 2026 Segenet Mulatu — All Rights Reserved.
+    </footer>
 
 </body>
 </html>
